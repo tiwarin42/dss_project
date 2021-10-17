@@ -94,26 +94,36 @@
 
     <div class="flex-container">
         <div class="pic-center">
-            <a href="mountain.php"><img src="images/mountain.jpg" width="280" height="280">
+            <a href="mountain.php"><img src="images/mountain.jpg" width="200" height="200">
                 <b>
                     <div class="centered" style="font-size: 50px;color: white">ภูเขา</div>
                 </b>
         </div>
         </a>
         <div class="pic-center">
-            <a href="sea.php"><img src="images/sea.png" width="280" height="280">
+            <a href="sea.php"><img src="images/sea.png" width="200" height="200">
                 <b>
                     <div class="centered" style="font-size: 50px;color: white">ทะเล</div>
                 </b>
             </a>
         </div>
         <div class="pic-center">
-            <a href="waterfall.php"><img src="images/waterfall.jpg" width="280" height="280">
+            <a href="waterfall.php"><img src="images/waterfall.jpg" width="200" height="200">
                 <b>
                     <div class="centered" style="font-size: 50px;color: white">น้ำตก</div>
                 </b></a>
         </div>
     </div>
+
+    <div style="margin-left:3%;padding:8px;">
+        <input type="image" src="images/back.png" alt="Submit" width="48" height="48" onclick="goBack()">
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
 </body>
 
 </html>

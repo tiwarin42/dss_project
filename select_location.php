@@ -51,7 +51,7 @@
 
     <div class="hero-image">
         <div class="hero-text">
-        <div style="font-size:70px">สถานที่ท่องเที่ยวที่แนะนำ</div>
+            <div style="font-size:70px">สถานที่ท่องเที่ยวที่แนะนำ</div>
         </div>
     </div>
 
@@ -111,11 +111,11 @@
     <div class='month'> สถานที่แนะนำ : </div>
     <br>
     <form action="detail_location.php" method="get">
+    <div style="display: flex;justify-content: center;">
         <?php while ($row = $location->fetch_assoc()) {
-            echo '<div class="month">                  
-                        <button class="button button1" name="location" value="' . $row["Name"] . '">' . $row["Name"] . '</button>
-                </div>';
+            echo '<div style="margin:15px"><button class="button button1" name="location" value="' . $row["Name"] . '">' . $row["Name"] . '</button></div>';
         } ?>
+         </div>
     </form>
 
     <div class="flex-container">
@@ -152,6 +152,17 @@
                 </b></a>
         </div> -->
     </div>
+
+
+    <div style="padding:30px;text-align:center;">
+        <input type="image" src="images/back.png" alt="Submit" width="48" height="48" onclick="goBack()">
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
 </body>
 
 </html>
