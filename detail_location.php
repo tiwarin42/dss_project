@@ -56,16 +56,10 @@
             <a href="index.php"><i class="fa fa-home"></i> หน้าแรก</a>
 
 
-            <div class="subnav">
+            <a href="mountain.php">ภูเขา</a>
+            <a href="sea.php">ทะเล</a>
 
-                <button class="subnavbtn">ภูเขา </button>
-
-            </div>
-            <div class="subnav">
-
-                <button class="subnavbtn">น้ำตก</button>
-
-            </div>
+            <a href="waterfall.php">น้ำตก</a>
             <div class="subnav">
 
                 <button onclick="goBack()" class="subnavbtn">ย้อนกลับ</button>

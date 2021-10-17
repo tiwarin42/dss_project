@@ -15,81 +15,78 @@
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=K2D:wght@200;400&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=K2D:wght@200;400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
-    div,
-    h1 {
-        font-family: 'Itim', cursive;
-    }
+        div,
+        h1 {
+            font-family: 'Itim', cursive;
+        }
 
-    .hero-image {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-            url("images/seaa.jpg");
-        height: 30%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-    }
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url("images/seaa.jpg");
+            height: 30%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
     </style>
 </head>
 
 <body>
     <div class="hero-image">
         <div class="hero-text">
-            <div style="font-size:50px;">ทะเล</div>
+            <div style="font-size:50px;">ทะเลที่แนะนำในเดือนนี้</div>
         </div>
     </div>
 
     <?php
-  $sum = $conn->query("select Name from month");
-  ?>
+    $sum = $conn->query("select Name from month");
+    ?>
 
     <div class="navbar">
         <a href="index.php"><i class="fa fa-home"></i> หน้าแรก</a>
 
-        <div class="subnav">
+        <a href="mountain.php">ภูเขา</a>
 
-            <button class="subnavbtn"><i class="fa fa-map"></i> เดือน<i class="fa fa-caret-down"></i></button>
-            <div class="subnav-content">
-                <?php
-        while ($row = $sum->fetch_assoc()) {
-          $name = $row['Name'];
-          echo '<a href="#">' . $name . '</a>';
-        } ?>
+        <a href="waterfall.php">น้ำตก</a>
 
-
-
-            </div>
-        </div>
-
-        <div class="subnav">
-
-            <button class="subnavbtn">ภูเขา </button>
-
-        </div>
-        <div class="subnav">
-
-            <button class="subnavbtn">อุทยาน</button>
-
-        </div>
     </div>
+    <?php
+    $sum = "select l.Name,l.Image,l.Detail,p.Name p from location l inner join type_location t
+                            on l.id_type = t.id_type
+                            inner join province p
+                            on l.id_province = p.id_province
+                            where  t.Name = 'ทะเล' AND l.id_month = 4 ORDER BY RAND()
+                            LIMIT 1";
+    ?>
     <div class="container">
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="images/seaa.jpg" alt="Avatar" style="width:700px;height:300px;">
+                    <?php if ($result = mysqli_query($conn, $sum)) {
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                echo '<img src="images/image_location/' . $row["Image"] . '" alt="Avatar" style="width:700px;height:300px;">';
+                    ?>
                 </div>
                 <div class="flip-card-back">
-                    <h1>ทะเล</h1>
-                    <p>สักที่แหละ</p>
-                    <p>มั้ง</p>
+        <?php
+                                echo '<br>';
+                                echo '<br>';
+                                echo '<h1>' . $row['Name'] . '</h1>';
+                                echo '<p style="margin-left:5%;margin-right:5%;text-align:Center;font-size:22px;">' . $row['p'] . '</p>';
+                            }
+                        }
+                    }
+        ?>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </body>
 
 </html>
