@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-family: "Kalam", cursive;
+  }
+  
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: "K2D", sans-serif;
+    background-color: #00c2cb;
+  }
+  
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("images/Cover.jpg");
+    height: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  
+  .hero-text button {
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: white;
+    background-color: red;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 125px;
+    font-size: 20px;
+  }
+  
+  .hero-text button:hover {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  #borderDemo {
+    border-top: 5px solid white;
+  }
+  
+  .text-center {
+    text-align: center;
+    color: white;
+    padding: 50px;
+    font-size: 25px;
+  }
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .pic-center {
+    text-align: center;
+    position: relative;
+  }
+  
+  .month {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+  }
+  
+  .region {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .flex-container > div {
+    background-color: auto;
+    width: 280px;
+    margin: 40px;
+    text-align: center;
+    line-height: 280px;
+    font-size: 30px;
+  }
+  
