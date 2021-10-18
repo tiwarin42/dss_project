@@ -35,6 +35,7 @@
 
         $location = "SELECT * from location where Name = '" . $loc . "'";
 
+
     ?>
         <div class="hero-image">
             <div class="hero-text">
@@ -48,9 +49,6 @@
         } ?>
             </div>
         </div>
-        <?php
-        $sum = $conn->query("select Name from month");
-        ?>
 
         <div class="navbar">
             <a href="index.php"><i class="fa fa-home"></i> หน้าแรก</a>
